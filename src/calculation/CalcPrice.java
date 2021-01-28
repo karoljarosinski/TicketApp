@@ -1,19 +1,19 @@
-package Calculation;
+package calculation;
 
-import TicketTypes.GiftTicket;
-import TicketTypes.OnlineTicket;
-import TicketTypes.StandardTicket;
-import TicketTypes.Ticket;
+import ticketTypes.GiftTicket;
+import ticketTypes.OnlineTicket;
+import ticketTypes.StandardTicket;
+import ticketTypes.Ticket;
 
 public class CalcPrice {
-    private static double finalPrice = 0;
 
     public static double calculatePrice(Ticket ticket) {
-        if (ticket instanceof OnlineTicket) {
+        double finalPrice = 0;
+        if (ticket.getTicketType().equals(OnlineTicket.ONLINE)) {
             finalPrice = onlineTicketPrice(ticket);
-        } else if (ticket instanceof StandardTicket) {
+        } else if (ticket.getTicketType().equals(StandardTicket.STANDARD)) {
             finalPrice = standardTicketPrice(ticket);
-        } else if (ticket instanceof GiftTicket) {
+        } else if (ticket.getTicketType().equals(GiftTicket.GIFT)) {
             finalPrice = giftTicketPrice(ticket);
         }
         return finalPrice;
@@ -31,7 +31,4 @@ public class CalcPrice {
         return standardTicketPrice(ticket) + (1.05 * ticket.getBasePrice());
     }
 
-    public static double getFinalPrice() {
-        return finalPrice;
-    }
 }

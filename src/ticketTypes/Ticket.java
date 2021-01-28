@@ -1,6 +1,6 @@
-package TicketTypes;
+package ticketTypes;
 
-import Address.Address;
+import address.Address;
 
 public class Ticket {
     private Address address;
@@ -10,16 +10,11 @@ public class Ticket {
     private double discount;
     private static int ticketId = 0;
 
-
-    public Ticket(Address address, String eventName, double basePrice, double discount) {
+    public Ticket(Address address, String eventName, String ticketType, double basePrice, double discount) {
         this.address = address;
         this.eventName = eventName;
         this.basePrice = basePrice;
         this.discount = discount;
-    }
-
-    public Ticket(Address address, String eventName, String ticketType, double basePrice, double discount) {
-        this(address, eventName, basePrice, discount);
         this.ticketType = ticketType;
         ticketId++;
     }
@@ -41,7 +36,7 @@ public class Ticket {
         System.out.println("Indywidualny numer biletu: " + ticketId);
     }
 
-    public String getEventName() {
-        return eventName;
+    public String getTicketType() {
+        return ticketType;
     }
 }
