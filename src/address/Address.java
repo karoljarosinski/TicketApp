@@ -1,4 +1,4 @@
-package Address;
+package address;
 
 public class Address {
     private String city;
@@ -12,4 +12,5 @@ public class Address {
     public String getInfo() {
         return "Adres: " + city + ", ulica " + street;
     }
+
 }

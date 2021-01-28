@@ -1,16 +1,12 @@
-package TicketTypes;
+package ticketTypes;
 
-import Address.Address;
+import address.Address;
 
 public class OnlineTicket extends Ticket {
-    private static final String ONLINE = "bilet internetowy";
+    public static final String ONLINE = "bilet internetowy";
 
     public OnlineTicket(Address address, String eventName, double price, double discount) {
         super(address, eventName, ONLINE, price, discount);
-    }
-
-    public static String getONLINE() {
-        return ONLINE;
     }
 
     @Override
